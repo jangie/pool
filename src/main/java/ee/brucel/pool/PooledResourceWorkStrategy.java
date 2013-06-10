@@ -1,4 +1,4 @@
-package ee.brucel.loadbalance;
+package ee.brucel.pool;
 
 import java.util.Map;
 

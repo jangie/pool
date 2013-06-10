@@ -5,9 +5,11 @@ import java.util.concurrent.Semaphore;
 class PooledResource <T> implements Comparable<PooledResource<T>>{
 	Semaphore permit;
 	T resource;
-	PooledResource(T resource){
+	Class<T> myType;
+	PooledResource(T resource, Class<T> type){
 		permit = new Semaphore(1);
 		this.resource = resource;
+		this.myType = type;
 	}
 	public int compareTo(PooledResource<T> other) {
 		if (this == other) {
